@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) exit(); // No direct access
 class Tyme_Init {
 
   public function __construct() {
-    $this->conditional_filters();
     $this->load_dependencies();
   }
 
