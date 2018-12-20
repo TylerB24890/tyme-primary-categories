@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Tyme Primary Category
+ * Plugin Name: Tyme Primary Categories
  * Plugin URI:  https://tylerb.me
  * Description: Easily set primary taxonomies for posts
  * Version:     1.0.0
