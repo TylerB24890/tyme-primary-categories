@@ -32,7 +32,7 @@ class Tyme_Taxonomies {
   * @param  int||object   Post ID or Post Object to retrieve primary tax
   * @return array         Array of available taxonomies & primary tax
   */
-  public function get_primary_tax( $post = null ) {
+  public function get_primary_term( $post = null ) {
 
     $post = $this->get_post_object( $post );
 
@@ -62,9 +62,9 @@ class Tyme_Taxonomies {
   * @param object $post    WP Post Object
   * @return void
   */
-  public function set_primary_tax( $post_id, $post ) {
+  public function set_primary_term( $post_id, $post ) {
 
-    $taxonomies = $this->get_primary_tax( $post );
+    $taxonomies = $this->get_primary_term( $post );
 
     if ( is_array( $taxonomies ) && ! empty( $taxonomies ) ) {
       foreach ( $taxonomies as $taxonomy ) {
@@ -93,7 +93,7 @@ class Tyme_Taxonomies {
   public function adjust_post_link( $category, $categories = null, $post = null ) {
     $post = $this->get_post_object( $post );
 
-    $post_taxonomies = $this->get_primary_tax( $post );
+    $post_taxonomies = $this->get_primary_term( $post );
 
     $primary = 0;
 
@@ -104,7 +104,7 @@ class Tyme_Taxonomies {
         }
       }
 
-      if( $primary !== 0 ) {
+      if( $primary ) {
         $category = get_category( $primary );
       }
     }

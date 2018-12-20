@@ -43,7 +43,7 @@ class Tyme_Assets {
     $tax = new Tyme_Taxonomies();
 
     $localized = array(
-      'taxonomies' => $tax->get_primary_tax()
+      'taxonomies' => $tax->get_primary_term()
     );
 
     return $localized;
