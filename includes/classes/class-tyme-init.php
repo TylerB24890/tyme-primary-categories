@@ -36,6 +36,7 @@ class Tyme_Init {
 
     if( is_admin() ) {
       require( TYME_INC . '/classes/class-tyme-assets.php' );
+      require( TYME_INC . '/classes/class-tyme-admin.php' );
     }
   }
 }
