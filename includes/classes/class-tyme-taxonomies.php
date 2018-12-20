@@ -23,6 +23,8 @@ class Tyme_Taxonomies {
 
   public function __construct() {
     $this->meta_prefix = '_tyme_primary_';
+
+    add_filter( 'post_link_category', array( $this, 'adjust_post_link' ), 10, 3 );
   }
 
   /**
@@ -32,13 +34,7 @@ class Tyme_Taxonomies {
   */
   public function get_primary_tax( $post = null ) {
 
-    if( ! $post || $post === null ) {
-      global $post;
-    }
-
-    if ( ! is_a( $post, 'WP_Post' ) ) {
-      $post = get_post( $post );
-    }
+    $post = $this->get_post_object( $post );
 
     $taxonomies = array();
 
@@ -48,6 +44,7 @@ class Tyme_Taxonomies {
 
       if( is_array( $post_taxonomies ) && ! empty( $post_taxonomies ) ) {
         foreach( $post_taxonomies as $tax ) {
+
           $taxonomies[] = array(
             'taxonomy' => $tax->name,
             'primary' => get_post_meta( $post->ID, $this->meta_prefix . $tax->name, true )
@@ -86,4 +83,52 @@ class Tyme_Taxonomies {
     }
   }
 
+  /**
+   * Change the post link to include the selected primary category
+   * @param  object $category   WordPress Category Object
+   * @param  array $categories  Array of categories associated with the post
+   * @param  object $post       WP Post Object
+   * @return object             New WordPress Category Object of Primary Term
+   */
+  public function adjust_post_link( $category, $categories = null, $post = null ) {
+    $post = $this->get_post_object( $post );
+
+    $post_taxonomies = $this->get_primary_tax( $post );
+
+    $primary = '';
+
+    if( is_array( $post_taxonomies ) && ! empty( $post_taxonomies ) ) {
+      foreach( $post_taxonomies as $taxonomies ) {
+        if( $taxonomies['taxonomy'] === 'category' && ! empty( $taxonomies['primary'] ) ) {
+          $primary = $taxonomies['primary'];
+        }
+      }
+
+      if( $primary !== '' && $primary !== 0 ) {
+        $category = get_category( $primary );
+      }
+    }
+
+    return $category;
+  }
+
+  /**
+   * Return the WP Post Object
+   * @param  int||object  $post The ID or Object of a WP post
+   * @return object       The WP Post object
+   */
+  private function get_post_object( $post ) {
+    if( ! $post || $post === null ) {
+      global $post;
+    }
+
+    if ( ! is_a( $post, 'WP_Post' ) ) {
+      $post = get_post( $post );
+    }
+
+    return $post;
+  }
+
 }
+
+new Tyme_Taxonomies;

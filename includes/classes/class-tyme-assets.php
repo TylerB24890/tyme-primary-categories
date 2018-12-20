@@ -30,6 +30,7 @@ class Tyme_Assets {
       // Admin scripts
       wp_enqueue_script( 'tyme-admin-script', TYME_URL . "assets/js/tyme.js", array( 'jquery' ), TYME_VERSION, true );
 
+      // Localized Variables
       wp_localize_script( 'tyme-admin-script', 'tymeVars', $this->localize_admin_scripts() );
     }
   }

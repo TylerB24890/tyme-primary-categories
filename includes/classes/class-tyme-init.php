@@ -15,16 +15,16 @@ class Tyme_Init {
 
   public function __construct() {
     $this->load_dependencies();
-    $this->disable_gutenberg();
+    $this->conditional_filters();
   }
 
-  /**
-  * Disable Gutenberg
-  * @return void
-  */
-  private function disable_gutenberg() {
-    add_filter('use_block_editor_for_post', '__return_false', 10);
-    add_filter('use_block_editor_for_post_type', '__return_false', 10);
+  private function conditional_filters() {
+    global $wp_version;
+
+    if( version_compare( $wp_version, '4.9', '>=' ) ) {
+      add_filter('use_block_editor_for_post', '__return_false', 10);
+      add_filter('use_block_editor_for_post_type', '__return_false', 10);
+    }
   }
 
   /**

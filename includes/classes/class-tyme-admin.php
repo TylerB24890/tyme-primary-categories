@@ -43,8 +43,8 @@ class Tyme_Admin {
     $nonce = $_POST['tyme_primary_nonce'];
 
     if ( wp_verify_nonce( $nonce, 'tyme_primary_nonce' ) ) {
-      $tax = new Taxonomies();
-      $tax->set_primary_tax( $post_id, $post );
+      $tax_obj = new Taxonomies();
+      $tax_obj->set_primary_tax( $post_id, $post );
     }
   }
 }
