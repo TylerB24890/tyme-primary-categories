@@ -32,6 +32,9 @@ class Tyme_Init {
    * @return void
    */
   private function load_dependencies() {
-    
+
+    if( is_admin() ) {
+      require( TYME_INC . '/classes/class-tyme-assets.php' );
+    }
   }
 }
