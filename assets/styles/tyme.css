@@ -1,19 +1,22 @@
+/* Override default WP style */
+.categorydiv ul.categorychecklist li {
+  position: relative;
+}
+
+/* Base "tyme-category" styles */
 .tyme-category {
-  float: right;
   text-decoration: none;
+  position: absolute;
+  right: 0;
 }
 .tyme-category.tyme-set-primary {
   display: none;
 }
-.tyme-category.tyme-unset-primary {
-  float: right;
-  text-decoration: none;
-}
 
+/* Hover styles */
 .categorydiv li:hover .tyme-category.tyme-set-primary {
   display: inline;
 }
-
 .categorydiv li:hover .tyme-category.tyme-unset-primary {
   color: #dc3232;
 }
