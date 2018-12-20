@@ -95,7 +95,7 @@ class Tyme_Taxonomies {
 
     $post_taxonomies = $this->get_primary_tax( $post );
 
-    $primary = '';
+    $primary = 0;
 
     if( is_array( $post_taxonomies ) && ! empty( $post_taxonomies ) ) {
       foreach( $post_taxonomies as $taxonomies ) {
@@ -104,7 +104,7 @@ class Tyme_Taxonomies {
         }
       }
 
-      if( $primary !== '' && $primary !== 0 ) {
+      if( $primary !== 0 ) {
         $category = get_category( $primary );
       }
     }
