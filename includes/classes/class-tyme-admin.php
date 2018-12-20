@@ -18,6 +18,16 @@ class Tyme_Admin {
     if( ! is_admin() ) {
       return;
     }
+
+    add_action( 'submitpost_box', array( $this, 'render_admin_view' ), 10 );
+  }
+
+  /**
+   * Load the JS Templates For Post Edit Screen
+   * @return void
+   */
+  public function render_admin_view() {
+    require( TYME_PATH . 'assets/partials/tyme-views.php' );
   }
 }
 
