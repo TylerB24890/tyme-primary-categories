@@ -1,0 +1,19 @@
+.tyme-category {
+  float: right;
+  text-decoration: none;
+}
+.tyme-category.tyme-set-primary {
+  display: none;
+}
+.tyme-category.tyme-unset-primary {
+  float: right;
+  text-decoration: none;
+}
+
+.categorydiv li:hover .tyme-category.tyme-set-primary {
+  display: inline;
+}
+
+.categorydiv li:hover .tyme-category.tyme-unset-primary {
+  color: #dc3232;
+}
