@@ -4,7 +4,7 @@ A simple WordPress plugin for assigning "Primary Categories" to your posts.<br>T
 
 #### WARNING: this plugin is not yet compatible with WordPress 5.0+ (Gutenberg). If you install & activate this plugin Gutenberg **will** be disabled automatically and your editor will return to the Classic WordPress Editor.
 
-Gutenberg support is currently in development. If you would like to help out or contribute, please see the `release/2.0` branch.
+Gutenberg support is currently in development. If you would like to help out or contribute, please see the [`release/2.0`](https://github.com/TylerB24890/tyme-primary-categories/tree/release/2.0) branch.
 
 ### Installation
 
@@ -15,4 +15,4 @@ Gutenberg support is currently in development. If you would like to help out or 
 ### How To Use
 As you create/edit posts and assign categories you will see "Set Primary" links next to the category checkbox. Simply click the link and save your post. You can unset your primary selection at anytime by clicking the "Unset Primary" link that replaces the previously mentioned "Set Primary" link.
 
-**Note:** If you have `%category%` in your permalink structure the `%category%` portion **will** be replaced with your "Primary Category" slug. Unsetting the Primary Category will revert the URL to it's previous state. 
+**Note:** If you have `%category%` in your permalink structure the `%category%` portion **will** be replaced with your "Primary Category" slug. Unsetting the Primary Category will revert the URL to it's previous state.
