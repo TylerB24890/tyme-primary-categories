@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Tyme Primary Category Admin Display
- *
- * @package tyme-primary-category
- */
+* Tyme Primary Category Admin Display
+*
+* @package tyme-primary-category
+*/
 
 
 namespace Tyme\PrimaryCategory\Admin;
@@ -26,23 +26,23 @@ class Tyme_Admin {
   }
 
   /**
-   * Load the JS Templates For Post Edit Screen
-   * @return void
-   */
+  * Load the JS Templates For Post Edit Screen
+  * @return void
+  */
   public function render_admin_view() {
     require( TYME_PATH . 'assets/partials/tyme-views.php' );
   }
 
   /**
-   * Save the selected primary taxonomy to the post
-   * @param  int $post_id    Post ID
-   * @param  object $post    WP Post Object
-   * @return void
-   */
+  * Save the selected primary taxonomy to the post
+  * @param  int $post_id    Post ID
+  * @param  object $post    WP Post Object
+  * @return void
+  */
   public function save_primary_tax( $post_id, $post ) {
     $nonce = $_POST['tyme_primary_nonce'];
 
-  	if ( wp_verify_nonce( $nonce, 'tyme_primary_nonce' ) ) {
+    if ( wp_verify_nonce( $nonce, 'tyme_primary_nonce' ) ) {
       $tax = new Taxonomies();
       $tax->set_primary_tax( $post_id, $post );
     }

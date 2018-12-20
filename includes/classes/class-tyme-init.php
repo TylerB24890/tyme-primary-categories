@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Initializes plugin
- *
- * @package tyme-primary-category
- */
+* Initializes plugin
+*
+* @package tyme-primary-category
+*/
 
 
 namespace Tyme\PrimaryCategory\Core;
@@ -19,18 +19,18 @@ class Tyme_Init {
   }
 
   /**
-   * Disable Gutenberg
-   * @return void
-   */
+  * Disable Gutenberg
+  * @return void
+  */
   private function disable_gutenberg() {
     add_filter('use_block_editor_for_post', '__return_false', 10);
     add_filter('use_block_editor_for_post_type', '__return_false', 10);
   }
 
   /**
-   * Load plugin dependency files
-   * @return void
-   */
+  * Load plugin dependency files
+  * @return void
+  */
   private function load_dependencies() {
     require( TYME_INC . '/classes/class-tyme-taxonomies.php' );
 

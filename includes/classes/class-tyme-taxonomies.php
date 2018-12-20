@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Tyme Primary Category Core Functionality
- *
- * Includes getter/setter functions for primary taxonomies
- *
- * @package tyme-primary-category
- */
+* Tyme Primary Category Core Functionality
+*
+* Includes getter/setter functions for primary taxonomies
+*
+* @package tyme-primary-category
+*/
 
 
 namespace Tyme\PrimaryCategory\Core;
@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) exit(); // No direct access
 class Tyme_Taxonomies {
 
   /**
-   * Tyme Primary Category Meta Prefix
-   * @var string
-   */
+  * Tyme Primary Category Meta Prefix
+  * @var string
+  */
   private $meta_prefix;
 
   public function __construct() {
@@ -26,23 +26,23 @@ class Tyme_Taxonomies {
   }
 
   /**
-   * Get primary taxonomy for a given post
-   * @param  int||object   Post ID or Post Object to retrieve primary tax
-   * @return array         Array of available taxonomies & primary tax
-   */
+  * Get primary taxonomy for a given post
+  * @param  int||object   Post ID or Post Object to retrieve primary tax
+  * @return array         Array of available taxonomies & primary tax
+  */
   public function get_primary_tax( $post = null ) {
 
     if( ! $post || $post === null ) {
       global $post;
     }
 
-  	if ( ! is_a( $post, 'WP_Post' ) ) {
-  		$post = get_post( $post );
-  	}
+    if ( ! is_a( $post, 'WP_Post' ) ) {
+      $post = get_post( $post );
+    }
 
-  	$taxonomies = array();
+    $taxonomies = array();
 
-  	if ( ! empty( $post ) ) {
+    if ( ! empty( $post ) ) {
 
       $post_taxonomies = get_object_taxonomies( $post->post_type, 'objects' );
 
@@ -54,17 +54,17 @@ class Tyme_Taxonomies {
           );
         }
       }
-  	}
+    }
 
-  	return $taxonomies;
+    return $taxonomies;
   }
 
   /**
-   * Set the primary taxonomy for a post
-   * @param int $post_id    Post ID
-   * @param object $post    WP Post Object
-   * @return void
-   */
+  * Set the primary taxonomy for a post
+  * @param int $post_id    Post ID
+  * @param object $post    WP Post Object
+  * @return void
+  */
   public function set_primary_tax( $post_id, $post ) {
 
     $taxonomies = $this->get_primary_tax( $post );
@@ -85,5 +85,5 @@ class Tyme_Taxonomies {
       }
     }
   }
-  
+
 }

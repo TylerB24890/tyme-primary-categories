@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Loads all plugin assets
- *
- * @package tyme-primary-category
- */
+* Loads all plugin assets
+*
+* @package tyme-primary-category
+*/
 
 
 namespace Tyme\PrimaryCategory\Core;
@@ -18,10 +18,10 @@ class Tyme_Assets {
   }
 
   /**
-   * Check that we are on the post edit page and enqueue assets accordingly
-   * @param  string $hook The page we are on in wp-admin
-   * @return void
-   */
+  * Check that we are on the post edit page and enqueue assets accordingly
+  * @param  string $hook The page we are on in wp-admin
+  * @return void
+  */
   public function admin_assets( $hook ) {
     if ( 'post.php' == $hook ) {
       // Admin styles
@@ -35,9 +35,9 @@ class Tyme_Assets {
   }
 
   /**
-   * Localize the post taxonomies for JS
-   * @return array  Array of primary taxonomies set for the post
-   */
+  * Localize the post taxonomies for JS
+  * @return array  Array of primary taxonomies set for the post
+  */
   private function localize_admin_scripts() {
     $tax = new Tyme_Taxonomies();
 

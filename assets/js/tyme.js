@@ -1,7 +1,7 @@
 /**
- * Tyme Primary Category
- * @author  Tyler Bailey <tylerb.media@gmail.com>
- */
+* Tyme Primary Category
+* @author  Tyler Bailey <tylerb.media@gmail.com>
+*/
 
 (function($) {
 	'use strict';
@@ -12,8 +12,8 @@
 	var removePrimary = wp.template('tyme-unset-admin-views');
 
 	/**
-	 * Wrapper for the Primary Category UI
-	 */
+	* Wrapper for the Primary Category UI
+	*/
 	var tymeWrapper = (function() {
 		// Function variables
 		var taxEl, templateData, firstParent, topParent;
