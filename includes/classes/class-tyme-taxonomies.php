@@ -25,5 +25,3 @@ class Tyme_Taxonomies {
     $this->meta_prefix = '_tyme_primary_';
   }
 }
-
-new \Tyme\PrimaryCategory\Core\Tyme_Taxonomies;
