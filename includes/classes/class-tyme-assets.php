@@ -30,8 +30,13 @@ class Tyme_Assets {
       // Admin scripts
       wp_enqueue_script( 'tyme-admin-script', TYME_URL . "assets/js/tyme.js", array( 'jquery' ), TYME_VERSION, true );
 
+      if( Tyme_Init::is_gutenberg() ) {
+        wp_enqueue_script( 'tyme-admin-gutenberg-script', TYME_URL . "assets/js/tyme-gutenberg.js", array( 'jquery', 'tyme-admin-script' ), TYME_VERSION, true );
+      }
+
       // Localized Variables
       wp_localize_script( 'tyme-admin-script', 'tymeVars', $this->localize_admin_scripts() );
+      wp_localize_script( 'tyme-admin-gutenberg-script', 'tymeVars', $this->localize_admin_scripts() );
     }
   }
 

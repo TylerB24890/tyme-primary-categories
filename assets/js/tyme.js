@@ -160,5 +160,4 @@
 			tymeWrapper.initTymeDisplay(tymeVars.taxonomies[i]);
 		}
 	}
-
 })(jQuery);

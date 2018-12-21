@@ -17,10 +17,25 @@ class Tyme_Init {
     $this->load_dependencies();
   }
 
-  private function conditional_filters() {
+  /**
+   * Check if WP is using the Gutenberg editor
+   * @return boolean
+   */
+  public static function is_gutenberg() {
     global $wp_version;
 
-    if( version_compare( $wp_version, '4.9', '>=' ) ) {
+    if( version_compare( $wp_version, '5.0', '>=' ) ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Disable gutenberg (temporary?)
+   */
+  private function conditional_filters() {
+    if( self::is_gutenberg() ) {
       add_filter('use_block_editor_for_post', '__return_false', 10);
       add_filter('use_block_editor_for_post_type', '__return_false', 10);
     }
