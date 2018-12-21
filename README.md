@@ -17,5 +17,6 @@ As you create/edit posts and assign categories you will see "Set Primary" links 
 
 **Note:** If you have `%category%` in your permalink structure the `%category%` portion **will** be replaced with your "Primary Category" slug. Unsetting the Primary Category will revert the URL to it's previous state.
 
+### Screenshots
 ![Set Primary](https://www.tylerb.me/img/primary-category-2.png)
 ![Unset Primary](https://www.tylerb.me/img/primary-category-1.png)
