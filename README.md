@@ -16,3 +16,6 @@ Gutenberg support is currently in development. If you would like to help out or 
 As you create/edit posts and assign categories you will see "Set Primary" links next to the category checkbox. Simply click the link and save your post. You can unset your primary selection at anytime by clicking the "Unset Primary" link that replaces the previously mentioned "Set Primary" link.
 
 **Note:** If you have `%category%` in your permalink structure the `%category%` portion **will** be replaced with your "Primary Category" slug. Unsetting the Primary Category will revert the URL to it's previous state.
+
+![Set Primary](https://www.tylerb.me/img/primary-category-2.png)
+![Unset Primary](https://www.tylerb.me/img/primary-category-1.png)
