@@ -40,7 +40,7 @@ class Tyme_Admin {
   * @return void
   */
   public function save_primary_tax( $post_id, $post ) {
-    $nonce = $_POST['tyme_primary_nonce'];
+    $nonce = isset($_POST['tyme_primary_nonce']) ? $_POST['tyme_primary_nonce'] : '';
 
     if ( wp_verify_nonce( $nonce, 'tyme_primary_nonce' ) ) {
       $tax_obj = new Taxonomies();
