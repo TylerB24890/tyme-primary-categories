@@ -28,7 +28,7 @@ function setup() {
 * @return void
 */
 function init() {
-	require TYME_INC . 'classes/class-tyme-init.php';
+	require TYMECAT_INC . 'classes/class-tyme-init.php';
 	new Tyme_Init;
 }
 
@@ -56,5 +56,5 @@ function deactivate() {
 function i18n() {
 	$locale = apply_filters( 'plugin_locale', get_locale(), 'tyme' );
 	load_textdomain( 'tyme', WP_LANG_DIR . '/tyme/tyme-' . $locale . '.mo' );
-	load_plugin_textdomain( 'tyme', false, plugin_basename( TYME_PATH ) . '/languages/' );
+	load_plugin_textdomain( 'tyme', false, plugin_basename( TYMECAT_PATH ) . '/languages/' );
 }

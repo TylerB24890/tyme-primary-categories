@@ -46,11 +46,11 @@ class Tyme_Init {
   * @return void
   */
   private function load_dependencies() {
-    require( TYME_INC . '/classes/class-tyme-taxonomies.php' );
+    require( TYMECAT_INC . '/classes/class-tyme-taxonomies.php' );
 
     if( is_admin() ) {
-      require( TYME_INC . '/classes/class-tyme-assets.php' );
-      require( TYME_INC . '/classes/class-tyme-admin.php' );
+      require( TYMECAT_INC . '/classes/class-tyme-assets.php' );
+      require( TYMECAT_INC . '/classes/class-tyme-admin.php' );
     }
   }
 }

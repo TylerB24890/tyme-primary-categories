@@ -30,7 +30,7 @@ class Tyme_Admin {
   * @return void
   */
   public function render_admin_view() {
-    require( TYME_PATH . 'assets/partials/tyme-views.php' );
+    require( TYMECAT_PATH . 'assets/partials/tyme-views.php' );
   }
 
   /**

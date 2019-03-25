@@ -25,13 +25,29 @@ class Tyme_Assets {
   public function admin_assets( $hook ) {
     if ( 'post.php' == $hook ) {
       // Admin styles
-      wp_enqueue_style( 'tyme-admin-style', TYME_URL . 'assets/styles/tyme.css', array(), TYME_VERSION );
+      wp_enqueue_style( 
+        'tyme-admin-style', 
+        TYMECAT_URL . 'assets/styles/tyme.css', 
+        array(), 
+        TYMECAT_VERSION 
+      );
 
       // Admin scripts
-      wp_enqueue_script( 'tyme-admin-script', TYME_URL . "assets/js/tyme.js", array( 'jquery' ), TYME_VERSION, true );
+      wp_enqueue_script( 
+        'tyme-admin-script', 
+        TYMECAT_URL . "assets/js/tyme.js", 
+        array( 'jquery' ), 
+        TYMECAT_VERSION, 
+        true 
+      );
 
       if( Tyme_Init::is_gutenberg() ) {
-        wp_enqueue_script( 'tyme-admin-gutenberg-script', TYME_URL . "assets/js/tyme-gutenberg.js", array( 'jquery', 'tyme-admin-script' ), TYME_VERSION, true );
+        wp_enqueue_script( 
+          'tyme-admin-gutenberg-script', 
+          TYMECAT_URL . "assets/js/tyme-gutenberg.js", 
+          array( 'jquery' ), 
+          TYMECAT_VERSION, 
+          true );
       }
 
       // Localized Variables
